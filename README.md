@@ -1,11 +1,11 @@
 # php-http-router
 this project is a simple http router that is designed to map endpoints in your site with a controller function that will handle the request.
-##how it works:
+# #how it works:
 It mainly relies on <a href="route/Router.php">Router</a> class that has two static methods <br>
 <code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>GET</code> requests to a method within an object.
 <br>
-<code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>POST</code> requests to a method within an object.
-##basic usage
+<code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>POST</code> requests to a method within an object.<br>
+# #basic usage
 <ol>
 <li>
 Create a file in your project root folder name it <code>.htaccess</code> and put <a href="public/.htaccess">this</a> code in it <br>
