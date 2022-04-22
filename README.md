@@ -4,7 +4,7 @@ this project is a simple http router that is designed to map endpoints in your s
 It mainly relies on <a href="route/Router.php">Router</a> class that has two static methods <br>
 <code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>GET</code> requests to a method within an object.
 <br>
-<code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>POST</code> requests to a method within an object.
+<code>Router::get(string endPointExpression,[Object,'functionName'])</code> maps a an http <code>POST</code> requests to a method within an object.<br>
 ##basic usage
 <ol>
 <li>
