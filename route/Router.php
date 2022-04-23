@@ -5,17 +5,22 @@ class Router{
     private static $args=[];
 
     /**
-     *
-     * @param $path a string expression like /users/{d}
+     * @param $pathIndication a string expression like /users/{d}
+     * @param $callback callback or [Object,'methodName']
      * @return void
      */
     public static function get($pathIndication,$callback){
         self::$getPaths[$pathIndication]=$callback;
     }
+    /**
+     * @param $pathIndication a string expression like /users/{d}
+     * @param $callback callback or [Object,'methodName']
+     * @return void
+     */
     public static function post($pathIndication,$callback){
         self::$postPaths[$pathIndication]=$callback;
     }
-    public static function match($uriIndication,$requestPath){
+    private static function match($uriIndication,$requestPath){
         $uriIndication=preg_replace('#^/#','',$uriIndication);
         $uriIndication=preg_replace('#/$#','',$uriIndication);
         $requestPath=preg_replace('#^/#','',$requestPath);
@@ -34,6 +39,12 @@ class Router{
         }
         return false;
     }
+
+    /**
+     * processes the current incoming request and routes it to the corresponding function or class method
+     * @return void
+     * @throws Exception
+     */
     public static function processIncomingRequest(){
         $foundRout=false;
         $requestUri=parse_url($_SERVER['REQUEST_URI'],PHP_URL_PATH);
