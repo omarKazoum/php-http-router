@@ -22,7 +22,7 @@ class Router{
         $requestPath=preg_replace('#/$#','',$requestPath);
 
         preg_match_all("#\{([^/]+)\}#",$uriIndication,$uriIndicationNames);
-        $uriRegex=preg_replace("#\{([^/]+)\}#",'(\w+)',$uriIndication);
+        $uriRegex=preg_replace("#\{([^/]+)\}#",'([^/]+)',$uriIndication);
         $uriRegex='#^'.$uriRegex.'$#';
         if(preg_match($uriRegex,$requestPath,$matches)){
             self::$args=[];
